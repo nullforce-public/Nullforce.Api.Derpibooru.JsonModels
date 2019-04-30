@@ -27,6 +27,8 @@ class Build : NukeBuild
 
     [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
     readonly Configuration Configuration = IsLocalBuild ? Configuration.Debug : Configuration.Release;
+    [Parameter("NuGet API key for push - Default is empty string")]
+    readonly string NugetApiKey;
 
     [Solution] readonly Solution Solution;
     [GitRepository] readonly GitRepository GitRepository;
@@ -35,6 +37,8 @@ class Build : NukeBuild
     AbsolutePath SourceDirectory => RootDirectory / "src";
     AbsolutePath TestsDirectory => RootDirectory / "tests";
     AbsolutePath OutputDirectory => RootDirectory / "output";
+
+    readonly string NuGetSource = IsLocalBuild ? "Local" : "nuget.org";
 
     Target Clean => _ => _
         .Before(Restore)
@@ -65,4 +69,22 @@ class Build : NukeBuild
                 .EnableNoRestore());
         });
 
+    Target Publish => _ => _
+        .DependsOn(Compile)
+        .Executes(() =>
+        {
+            if (!IsLocalBuild && string.IsNullOrEmpty(NugetApiKey))
+            {
+                Logger.Warn("NuGet API key was not provided. Unable to push NuGet package.");
+                return;
+            }
+
+            var nugetPackage = GlobFiles(OutputDirectory, "*.nupkg").First();
+
+            DotNetNuGetPush(s => s
+                .SetSource(NuGetSource)
+                .SetTargetPath(nugetPackage)
+                .SetApiKey(NugetApiKey)
+            );
+        });
 }
