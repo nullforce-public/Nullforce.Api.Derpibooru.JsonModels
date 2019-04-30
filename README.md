@@ -4,7 +4,7 @@ A C# wrapper for Derpibooru JSON models
 
 |||
 ----------------------|---
-**Build**             | TBD
+**Build**             | [![Build Status](https://dev.azure.com/nullforce-public/DerPyBooru/_apis/build/status/nullforce-public.Nullforce.Api.Derpibooru.JsonModels?branchName=master)](https://dev.azure.com/nullforce-public/DerPyBooru/_build/latest?definitionId=3&branchName=master)
 **NuGet**             | [![nuget](https://img.shields.io/nuget/v/Nullforce.Api.Derpibooru.JsonModels.svg)](https://www.nuget.org/packages/Nullforce.Api.Derpibooru.JsonModels/)
 **NuGet (prerelease)**| [![nuget](https://img.shields.io/nuget/vpre/Nullforce.Api.Derpibooru.JsonModels.svg)](https://www.nuget.org/packages/Nullforce.Api.Derpibooru.JsonModels/)
 
