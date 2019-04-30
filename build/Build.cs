@@ -92,7 +92,7 @@ class Build : NukeBuild
         {
             if (!IsLocalBuild && string.IsNullOrEmpty(NugetApiKey))
             {
-                Logger.Warn("NuGet API key was not provided. Unable to push NuGet package.");
+                Logger.Error("NuGet API key was not provided. Unable to push NuGet package.");
                 return;
             }
 
