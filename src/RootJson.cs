@@ -20,7 +20,7 @@ namespace Nullforce.Api.Derpibooru.JsonModels
         public InteractionJson[] Interactions { get; set; }
     }
 
-    public class SearchRoot
+    public class SearchRootJson
     {
         public ImageJson[] Search { get; set; }
         public int Total { get; set; }
