@@ -63,14 +63,31 @@ class Build : NukeBuild
             DotNetBuild(s => s
                 .SetProjectFile(Solution)
                 .SetConfiguration(Configuration)
-                .SetOutputDirectory(OutputDirectory)
                 .SetProperty("PackageVersion", GitVersion.NuGetVersionV2)
                 .SetInformationalVersion(GitVersion.InformationalVersion)
                 .EnableNoRestore());
         });
 
-    Target Publish => _ => _
+    Target Test => _ => _
         .DependsOn(Compile)
+        .Executes(() =>
+        {
+            var testProjects = GlobFiles(TestsDirectory, "**/*.csproj");
+
+            foreach (var testProject in testProjects)
+            {
+                DotNetTest(s => s
+                    .SetProjectFile(testProject)
+                    .SetConfiguration(Configuration)
+                    .EnableNoBuild()
+                );
+            }
+        });
+
+    Target Publish => _ => _
+        .DependsOn(Clean)
+        .DependsOn(Compile)
+        .DependsOn(Test)
         .Executes(() =>
         {
             if (!IsLocalBuild && string.IsNullOrEmpty(NugetApiKey))
@@ -78,6 +95,14 @@ class Build : NukeBuild
                 Logger.Warn("NuGet API key was not provided. Unable to push NuGet package.");
                 return;
             }
+
+            DotNetPack(s => s
+                .SetConfiguration(Configuration)
+                .SetOutputDirectory(OutputDirectory)
+                .SetProperty("PackageVersion", GitVersion.NuGetVersionV2)
+                .SetInformationalVersion(GitVersion.InformationalVersion)
+                .EnableNoBuild()
+            );
 
             var nugetPackage = GlobFiles(OutputDirectory, "*.nupkg").First();
 
