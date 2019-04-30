@@ -66,6 +66,14 @@ class Build : NukeBuild
                 .SetProperty("PackageVersion", GitVersion.NuGetVersionV2)
                 .SetInformationalVersion(GitVersion.InformationalVersion)
                 .EnableNoRestore());
+
+            DotNetPack(s => s
+                .SetConfiguration(Configuration)
+                .SetOutputDirectory(OutputDirectory)
+                .SetProperty("PackageVersion", GitVersion.NuGetVersionV2)
+                .SetInformationalVersion(GitVersion.InformationalVersion)
+                .EnableNoBuild()
+            );
         });
 
     Target Test => _ => _
@@ -95,14 +103,6 @@ class Build : NukeBuild
                 Logger.Error("NuGet API key was not provided. Unable to push NuGet package.");
                 return;
             }
-
-            DotNetPack(s => s
-                .SetConfiguration(Configuration)
-                .SetOutputDirectory(OutputDirectory)
-                .SetProperty("PackageVersion", GitVersion.NuGetVersionV2)
-                .SetInformationalVersion(GitVersion.InformationalVersion)
-                .EnableNoBuild()
-            );
 
             var nugetPackage = GlobFiles(OutputDirectory, "*.nupkg").First();
 
