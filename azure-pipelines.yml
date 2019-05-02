@@ -20,6 +20,12 @@ steps:
   displayName: 'Run the Test target'
   continueOnError: false
 
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'VSTest'
+    testResultsFiles: 'output/**/*.trx'
+    failTaskOnFailedTests: true
+
 - task: CopyFiles@2
   inputs:
     SourceFolder: 'output'

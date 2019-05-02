@@ -87,6 +87,8 @@ class Build : NukeBuild
                 DotNetTest(s => s
                     .SetProjectFile(testProject)
                     .SetConfiguration(Configuration)
+                    .SetResultsDirectory(OutputDirectory / "TestResults")
+                    .SetLogger("trx")
                     .EnableNoBuild()
                 );
             }
