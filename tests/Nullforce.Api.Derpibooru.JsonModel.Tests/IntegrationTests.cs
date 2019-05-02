@@ -3,10 +3,9 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Flurl;
 using Flurl.Http;
-using Nullforce.Api.Derpibooru.JsonModels;
 using Xunit;
 
-namespace Nullforce.Api.Derpibooru.JsonModel.Tests
+namespace Nullforce.Api.Derpibooru.JsonModels.Tests
 {
     public class UnitTest1
     {
