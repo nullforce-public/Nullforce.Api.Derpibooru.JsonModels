@@ -9,6 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nullforce.Api.Derpibooru.JsonModels.Tests", "tests\Nullforce.Api.Derpibooru.JsonModel.Tests\Nullforce.Api.Derpibooru.JsonModels.Tests.csproj", "{04539D26-C3CE-4310-8B7A-B86F837DBD52}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{60E362BE-BD2E-4788-93EC-239C3DDF4FF6}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
