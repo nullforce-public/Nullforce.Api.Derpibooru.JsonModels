@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nullforce.Api.Derpibooru.JsonModels
 {
@@ -11,11 +11,11 @@ namespace Nullforce.Api.Derpibooru.JsonModels
 
     public class ListsRootJson
     {
-        [JsonProperty("top_scoring")]
+        [JsonPropertyName("top_scoring")]
         public ImageJson[] TopScoring { get; set; }
-        [JsonProperty("top_commented")]
+        [JsonPropertyName("top_commented")]
         public ImageJson[] TopCommented { get; set; }
-        [JsonProperty("all_time_top_scoring")]
+        [JsonPropertyName("all_time_top_scoring")]
         public ImageJson[] AllTimeTopScoring { get; set; }
         public InteractionJson[] Interactions { get; set; }
     }

@@ -1,12 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nullforce.Api.Derpibooru.JsonModels
 {
     public class RepresentationsJson
     {
-        [JsonProperty("thumb_tiny")]
+        [JsonPropertyName("thumb_tiny")]
         public string ThumbTiny { get; set; }
-        [JsonProperty("thumb_small")]
+        [JsonPropertyName("thumb_small")]
         public string ThumbSmall { get; set; }
         public string Thumb { get; set; }
         public string Small { get; set; }

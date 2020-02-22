@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Nullforce.Api.Derpibooru.JsonModels
 {
@@ -11,12 +11,12 @@ namespace Nullforce.Api.Derpibooru.JsonModels
     public class InteractionJson
     {
         public int Id { get; set; }
-        [JsonProperty("interaction_type")]
+        [JsonPropertyName("interaction_type")]
         public string InteractionType { get; set; }
         public string Value { get; set; }
-        [JsonProperty("user_id")]
+        [JsonPropertyName("user_id")]
         public int UserId { get; set; }
-        [JsonProperty("image_id")]
+        [JsonPropertyName("image_id")]
         public int ImageId { get; set; }
     }
 }
