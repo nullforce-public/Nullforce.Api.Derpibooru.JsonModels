@@ -20,6 +20,16 @@ namespace Nullforce.Api.Derpibooru.JsonModels
         public ImageJson Image { get; set; }
     }
 
+    public class ImageSearchRootJson
+    {
+        [JsonPropertyName("images")]
+        public ImageJson[] Images { get; set; }
+        [JsonPropertyName("interactions")]
+        public InteractionJson[] Interactions { get; set; }
+        [JsonPropertyName("total")]
+        public int Total { get; set; }
+    }
+
     public class PostSearchRootJson
     {
         [JsonPropertyName("posts")]
