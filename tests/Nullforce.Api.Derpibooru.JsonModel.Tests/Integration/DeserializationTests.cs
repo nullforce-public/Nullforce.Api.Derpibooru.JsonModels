@@ -13,6 +13,17 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
     {
         private readonly string _baseUri = "https://derpibooru.org/api/v1/json";
 
+        public DeserializationTests()
+        {
+            // Do this in Startup. All calls to SimpleCast will use the same HttpClient instance.
+            FlurlHttp.ConfigureClient(_baseUri, cli => cli
+                .WithHeaders(new
+                {
+                    Accept = "application/json",
+                    User_Agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" // Flurl will convert that underscore to a hyphen
+                }));
+        }
+
         [Fact]
         public void CommentRoot_GetJson_SuccessWithoutExceptions()
         {
@@ -34,8 +45,13 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
             // Property validation
             comment.Id.Should().Be(7093003);
             comment.Author.Should().Be("genervt");
+            comment.Avatar.Should().Be("https://derpicdn.net/avatars/2018/2/20/121207d4a04abfd859d5a09.png");
             comment.Body.Should().Be("Adorable Fluttershy making cute noises.");
+            comment.CreatedAt.Should().Be(DateTime.Parse("2018-04-27T19:40:27"));
+            comment.EditReason.Should().BeNullOrEmpty();
+            comment.EditedAt.Should().BeNull();
             comment.ImageId.Should().Be(1384692);
+            comment.UpdatedAt.Should().Be(DateTime.Parse("2018-04-27T19:40:27"));
             comment.UserId.Should().Be(434362);
         }
 
@@ -60,7 +76,7 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
             // Property validation
             gallery.Description.Should().Be("Favorites");
             gallery.Id.Should().Be(11972);
-            gallery.SpoilerWarning.Should().Be("SFW");
+            gallery.SpoilerWarning.Should().BeEmpty();
             gallery.ThumbnailId.Should().Be(1426222);
             gallery.Title.Should().Be("Fluttershy");
             gallery.User.Should().Be("Zippi");
@@ -111,11 +127,11 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
             image.TagCount.Should().Be(image.TagIds.Length);
             image.TagIds.Should().HaveCount(image.TagCount);
             image.Tags.Should().HaveCount(image.TagCount);
-            image.UpdatedAt.Should().Be(DateTime.Parse("2019-12-20T10:09:44"));
+            image.UpdatedAt.Should().Be(DateTime.Parse("2020-07-02 11:33:07"));
             image.Uploader.Should().BeNull();
             image.UploaderId.Should().BeNull();
             image.UpvoteCount.Should().Be(image.Score + image.DownvoteCount);
-            image.ViewUri.Should().Be("https://derpicdn.net/img/view/2017/3/11/1384692__safe_artist-colon-yakovlev-dash-vad_fluttershy_pegasus_pony_-colon-3_bed_behaving+like+a+cat_box_cheek+fluff_chest+fluff_colored+sketch_cute_d.png");
+            image.ViewUri.Should().Be("https://derpicdn.net/img/view/2017/3/11/1384692__safe_artist-colon-yakovlev-dash-vad_fluttershy_pegasus_pony_-colon-3_-colon-t_bed_behaving+like+a+cat_box_cheek+fluff_chest+fluff_colored+sketch_cute_d.png");
             image.Width.Should().Be(1400);
             image.WilsonScore.Should().BeGreaterThan(0);
 
