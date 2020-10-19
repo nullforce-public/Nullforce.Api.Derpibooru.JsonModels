@@ -17,6 +17,15 @@ namespace Nullforce.Api.Derpibooru.JsonModels
         public int Total { get; set; }
     }
 
+    public class ForumsRoot
+    {
+        [JsonPropertyName("forunms")]
+        public ForumJson[] Forums { get; set; }
+
+        [JsonPropertyName("total")]
+        public int Total { get; set; }
+    }
+
     public class GallerySearchRoot
     {
         [JsonPropertyName("galleries")]
