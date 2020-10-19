@@ -45,7 +45,7 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
             // Property validation
             comment.Id.Should().Be(7093003);
             comment.Author.Should().Be("genervt");
-            comment.Avatar.Should().Be("https://derpicdn.net/avatars/2018/2/20/121207d4a04abfd859d5a09.png");
+            comment.AvatarUri.Should().Be("https://derpicdn.net/avatars/2018/2/20/121207d4a04abfd859d5a09.png");
             comment.Body.Should().Be("Adorable Fluttershy making cute noises.");
             comment.CreatedAt.Should().Be(DateTime.Parse("2018-04-27T19:40:27"));
             comment.EditReason.Should().BeNullOrEmpty();
@@ -205,7 +205,7 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
 
             // Property validation
             post.Author.Should().Be("Havock");
-            post.Avatar.Should().Be("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjUiIGhlaWdodD0iMTI1IiB2aWV3Qm94PSIwIDAgMTI1IDEyNSIgY2xhc3M9ImF2YXRhci1zdmciPjxyZWN0IHdpZHRoPSIxMjUiIGhlaWdodD0iMTI1IiBmaWxsPSIjYzZkZmYyIi8+PHBhdGggZD0iTTE1LjQ1NiAxMDkuMTVDMTIuMDIgOTcuODA1IDYuNDQgOTUuMDM2LS43OTQgOTguODl2MTkuMTAyYzUuMTMtMTAuMDkgMTAuMjYzLTguMjk0IDE1LjM5NS01LjciIGZpbGw9IiM1Q0E1QUYiLz48cGF0aCBkPSJNNzMuMDU0IDI0LjQ2YzI1Ljg4NiAwIDM5LjE0NCAyNi4zOSAyOC45MTYgNDQuOTUgMS4yNjMuMzggNC45MjQgMi4yNzQgMy40MSA0LjgtMS41MTYgMi41MjUtNy41NzcgMTYuMjg4LTI3Ljc4IDE0Ljc3My0xLjAxIDYuNDQtLjMzIDEyLjYxMyAxLjY0MiAyMi44NTQgMS4zOSA3LjIyNC0uNjMyIDE0LjY0OC0uNjMyIDE0LjY0OHMtNDcuNzg1LjIxNi03My43NC0uMTI3Yy0xLjg4My02LjM4NyA4Ljk2NC0yNS43NiAyMC44MzMtMjQuNzQ4IDE1LjY3NCAxLjMzNCAxOS4xOTMgMS42NCAyMS41OTItMi4wMiAyLjQtMy42NjIgMC0yMy4yMzQtMy41MzUtMzAuODEtMy41MzYtNy41NzctNy44My00MC43ODUgMjkuMjk0LTQ0LjMyeiIgZmlsbD0iIzdBQUY0QyIvPjxwYXRoIGQ9Ik01Mi4xMDMgMjMuNDNDNzAuMTIgMS42NjggOTcuMTI2IDIuODkgMTEwLjE0IDE2Ljk5OGMyNy45MyAzMC4yNy0xNS42NzYgNDMuNjYyLTE4Ljk1MiAyMS44NjgtMTIuOTM0LTQuNDUzLTIzLjIyLTMuOTU2LTM0LjEzLTIuNzQ3TDUxLjEyIDQ5LjI2Yy41NTcgMjMuMjQgMTcuNzg3IDI2Ljg3NiAyMi44ODcgNDEuMzE1IDQuMTI0IDExLjY3Ny01LjMyNSAxNC4wNzUtOS40MDQgMTIuNjU2IDQuNjIyIDE3LjY2OC0xMi4wMjIgMjQuMy0yMC4wMDMgNy40LTEuNzk3LTMuOC0yLjgxLTE0LjgxMyAzLjY3Mi0xNC41MS0zLjE4Mi0xNi43ODQtMTcuNDUtMzguMjg1LTIuNDMtNjMuNzV6IiBmaWxsPSIjNUNBNUFGIi8+PHBhdGggZD0iTTY0LjM0MiAzNS41N3MzLjI4My04LjA4LTcuMzI0LTE5LjMxOGMtMS43NjgtMS43NjgtMy4wMy0yLjI3My00LjY3Mi0uNzU4LTEuNjQgMS41MTUtMTcuMDQ2IDE2LjAzNi4yNTMgMzguMjYuNTA0LTIuNCAxLjEzNS05LjU5NyAxLjEzNS05LjU5N3oiIGZpbGw9IiM3QUFGNEMiLz48L3N2Zz4=");
+            post.AvatarUri.Should().Be("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjUiIGhlaWdodD0iMTI1IiB2aWV3Qm94PSIwIDAgMTI1IDEyNSIgY2xhc3M9ImF2YXRhci1zdmciPjxyZWN0IHdpZHRoPSIxMjUiIGhlaWdodD0iMTI1IiBmaWxsPSIjYzZkZmYyIi8+PHBhdGggZD0iTTE1LjQ1NiAxMDkuMTVDMTIuMDIgOTcuODA1IDYuNDQgOTUuMDM2LS43OTQgOTguODl2MTkuMTAyYzUuMTMtMTAuMDkgMTAuMjYzLTguMjk0IDE1LjM5NS01LjciIGZpbGw9IiM1Q0E1QUYiLz48cGF0aCBkPSJNNzMuMDU0IDI0LjQ2YzI1Ljg4NiAwIDM5LjE0NCAyNi4zOSAyOC45MTYgNDQuOTUgMS4yNjMuMzggNC45MjQgMi4yNzQgMy40MSA0LjgtMS41MTYgMi41MjUtNy41NzcgMTYuMjg4LTI3Ljc4IDE0Ljc3My0xLjAxIDYuNDQtLjMzIDEyLjYxMyAxLjY0MiAyMi44NTQgMS4zOSA3LjIyNC0uNjMyIDE0LjY0OC0uNjMyIDE0LjY0OHMtNDcuNzg1LjIxNi03My43NC0uMTI3Yy0xLjg4My02LjM4NyA4Ljk2NC0yNS43NiAyMC44MzMtMjQuNzQ4IDE1LjY3NCAxLjMzNCAxOS4xOTMgMS42NCAyMS41OTItMi4wMiAyLjQtMy42NjIgMC0yMy4yMzQtMy41MzUtMzAuODEtMy41MzYtNy41NzctNy44My00MC43ODUgMjkuMjk0LTQ0LjMyeiIgZmlsbD0iIzdBQUY0QyIvPjxwYXRoIGQ9Ik01Mi4xMDMgMjMuNDNDNzAuMTIgMS42NjggOTcuMTI2IDIuODkgMTEwLjE0IDE2Ljk5OGMyNy45MyAzMC4yNy0xNS42NzYgNDMuNjYyLTE4Ljk1MiAyMS44NjgtMTIuOTM0LTQuNDUzLTIzLjIyLTMuOTU2LTM0LjEzLTIuNzQ3TDUxLjEyIDQ5LjI2Yy41NTcgMjMuMjQgMTcuNzg3IDI2Ljg3NiAyMi44ODcgNDEuMzE1IDQuMTI0IDExLjY3Ny01LjMyNSAxNC4wNzUtOS40MDQgMTIuNjU2IDQuNjIyIDE3LjY2OC0xMi4wMjIgMjQuMy0yMC4wMDMgNy40LTEuNzk3LTMuOC0yLjgxLTE0LjgxMyAzLjY3Mi0xNC41MS0zLjE4Mi0xNi43ODQtMTcuNDUtMzguMjg1LTIuNDMtNjMuNzV6IiBmaWxsPSIjNUNBNUFGIi8+PHBhdGggZD0iTTY0LjM0MiAzNS41N3MzLjI4My04LjA4LTcuMzI0LTE5LjMxOGMtMS43NjgtMS43NjgtMy4wMy0yLjI3My00LjY3Mi0uNzU4LTEuNjQgMS41MTUtMTcuMDQ2IDE2LjAzNi4yNTMgMzguMjYuNTA0LTIuNCAxLjEzNS05LjU5NyAxLjEzNS05LjU5N3oiIGZpbGw9IiM3QUFGNEMiLz48L3N2Zz4=");
             post.Body.Should().Contain("None can resist her cuteness.");
             post.CreatedAt.Should().Be(DateTime.Parse("2019-02-24T16:58:07"));
             post.EditReason.Should().BeNullOrEmpty();
@@ -213,6 +213,51 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
             post.Id.Should().Be(4236623);
             post.UpdatedAt.Should().Be(DateTime.Parse("2019-02-24T16:58:07"));
             post.UserId.Should().Be(325550);
+        }
+
+        [Fact]
+        public void ProfileRootJson_GetJson_SuccessWithoutExceptions()
+        {
+            // https://derpibooru.org/api/v1/json/profiles/216494
+            var uri = _baseUri.AppendPathSegment("profiles/216494");
+            ProfileRootJson profileRoot = null;
+            UserJson user = null;
+
+            Func<Task> act = async () =>
+            {
+                var json = await uri.GetStringAsync();
+                profileRoot = JsonSerializer.Deserialize<ProfileRootJson>(json);
+                user = profileRoot.User;
+            };
+
+            act.Should().NotThrow();
+            profileRoot.Should().NotBeNull();
+
+            // Property validation
+            user.Name.Should().Be("Joey");
+            user.PostCount.Should().BeGreaterOrEqualTo(4733);
+            user.Role.Should().Be("user");
+            user.Slug.Should().Be("Joey");
+            user.TopicCount.Should().BeGreaterOrEqualTo(183);
+            user.UploadCount.Should().BeGreaterOrEqualTo(732);
+
+            user.Awards.Should().NotBeNull();
+            user.Links.Should().NotBeNull();
+
+            AwardsJson award = user.Awards.Where(a => a.Id == 25).FirstOrDefault();
+            award.Should().NotBeNull();
+            award.Id.Should().Be(25);
+            award.AwardedOn.Should().Be(DateTime.Parse("2019-10-26T07:45:30"));
+            award.ImageUri.Should().Be("https://derpicdn.net/media/2016/10/3/135869b76b1b1cb145181e2.svg");
+            award.Label.Should().Be("For users who have donated to the site");
+            award.Title.Should().Be("Element of Generosity");
+
+            LinksJson link = user.Links.FirstOrDefault();
+            link.Should().NotBeNull();
+            link.CreatedAt.Should().Be(DateTime.Parse("2018-12-10T04:53:18"));
+            link.State.Should().Be("verified");
+            link.TagId.Should().Be(379649);
+            link.UserId.Should().Be(216494);
         }
 
         [Fact]

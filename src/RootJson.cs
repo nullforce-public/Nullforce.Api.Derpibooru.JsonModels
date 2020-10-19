@@ -36,6 +36,12 @@ namespace Nullforce.Api.Derpibooru.JsonModels
         public PostJson[] Posts { get; set; }
     }
 
+    public class ProfileRootJson
+    {
+        [JsonPropertyName("user")]
+        public UserJson User { get; set; }
+    }
+
     public class TagSearchRootJson
     {
         [JsonPropertyName("tags")]

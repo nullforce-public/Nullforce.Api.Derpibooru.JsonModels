@@ -21,7 +21,7 @@ namespace Nullforce.Api.Derpibooru.JsonModels
         /// The URL of the author's avatar. May be a link to the CDN path, or a data: URI.
         /// </summary>
         [JsonPropertyName("avatar")]
-        public string Avatar { get; set; }
+        public string AvatarUri { get; set; }
 
         /// <summary>
         /// The comment text.
