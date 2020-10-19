@@ -8,7 +8,7 @@ namespace Nullforce.Api.Derpibooru.JsonModels
         public CommentJson Comment { get; set; }
     }
 
-    public class FiltersRoot
+    public class FiltersRootJson
     {
         [JsonPropertyName("filters")]
         public FilterJson[] Filters { get; set; }
@@ -17,7 +17,7 @@ namespace Nullforce.Api.Derpibooru.JsonModels
         public int Total { get; set; }
     }
 
-    public class ForumsRoot
+    public class ForumsRootJson
     {
         [JsonPropertyName("forunms")]
         public ForumJson[] Forums { get; set; }
@@ -64,5 +64,14 @@ namespace Nullforce.Api.Derpibooru.JsonModels
     {
         [JsonPropertyName("tags")]
         public TagJson[] Tags { get; set; }
+    }
+
+    public class TopicRootJson
+    {
+        [JsonPropertyName("topics")]
+        public TopicJson[] Topics { get; set; }
+
+        [JsonPropertyName("total")]
+        public int Total { get; set; }
     }
 }
