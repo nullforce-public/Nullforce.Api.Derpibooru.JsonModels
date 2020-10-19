@@ -12,6 +12,12 @@ namespace Nullforce.Api.Derpibooru.JsonModels
         public int Id { get; set; }
 
         /// <summary>
+        /// Whether the image is animated.
+        /// </summary>
+        [JsonPropertyName("animated")]
+        public bool IsAnimated { get; set; }
+
+        /// <summary>
         /// The image's width divided by its height.
         /// </summary>
         [JsonPropertyName("aspect_ratio")]
@@ -52,6 +58,12 @@ namespace Nullforce.Api.Derpibooru.JsonModels
         /// </summary>
         [JsonPropertyName("duplicate_of")]
         public int? DuplicateOf { get; set; }
+
+        /// <summary>
+        /// The number of seconds the image lasts, if animated, otherwise .04.
+        /// </summary>
+        [JsonPropertyName("duration")]
+        public double Duration { get; set; }
 
         /// <summary>
         /// The number of faves the image has.

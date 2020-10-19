@@ -109,6 +109,7 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
             image.Description.Should().Be("Pony in box, inspired by my cat as usual X3 Just quick color sketch)");
             image.DownvoteCount.Should().BeGreaterOrEqualTo(6);
             image.DuplicateOf.Should().BeNull();
+            image.Duration.Should().Be(0.04);
             image.FaveCount.Should().BeGreaterOrEqualTo(1408);
             image.FirstSeenAt.Should().Be(DateTime.Parse("2017-03-11T20:32:14"));
             image.Format.Should().Be("PNG");
@@ -116,6 +117,7 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
             image.Height.Should().Be(1845);
             image.HiddenFromUsers.Should().BeFalse();
             image.Id.Should().Be(1384692);
+            image.IsAnimated.Should().BeFalse();
             image.IsProcessed.Should().BeTrue();
             image.IsSpoilered.Should().BeFalse();
             image.MimeType.Should().Be("image/png");
