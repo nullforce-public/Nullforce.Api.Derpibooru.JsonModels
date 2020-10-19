@@ -8,6 +8,15 @@ namespace Nullforce.Api.Derpibooru.JsonModels
         public CommentJson Comment { get; set; }
     }
 
+    public class FiltersRoot
+    {
+        [JsonPropertyName("filters")]
+        public FilterJson[] Filters { get; set; }
+
+        [JsonPropertyName("total")]
+        public int Total { get; set; }
+    }
+
     public class GallerySearchRoot
     {
         [JsonPropertyName("galleries")]
