@@ -63,7 +63,7 @@ namespace Nullforce.Api.Derpibooru.JsonModels
         /// The number of seconds the image lasts, if animated, otherwise .04.
         /// </summary>
         [JsonPropertyName("duration")]
-        public double Duration { get; set; }
+        public double? Duration { get; set; }
 
         /// <summary>
         /// The number of faves the image has.
