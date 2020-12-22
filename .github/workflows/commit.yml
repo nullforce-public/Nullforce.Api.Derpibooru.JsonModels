@@ -1,7 +1,7 @@
 name: Commit
 
 # Run this workflow every time a new commit pushed to your repository
-on: push
+on: [push, pull_request]
 
 env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
@@ -40,4 +40,5 @@ jobs:
 
       # Publish NuGet packages
       - name: Publish NuGet Package to GitHub Packages
+        if: github.event_name == 'pull_request' || startsWith(github.ref, 'refs/heads/main') || startsWith(github.ref, 'refs/tags/')
         run: dotnet nuget push publish/*.nupkg --api-key ${{secrets.GITHUB_TOKEN}} --source https://nuget.pkg.github.com/${{github.repository_owner}}/index.json
