@@ -30,5 +30,7 @@ var searchResult = await uri.GetJsonAsync<SearchRootJson>();
 
 ## See Also
 
-If you're looking for a Derpibooru client written in C# that uses these models,
+- If you're looking for a Derpibooru client written in C# that uses these models,
 see [Nullforce.Api.Derpibooru](https://github.com/nullforce-public/Nullforce.Api.Derpibooru)
+
+- [Derpibooru API Definition](https://derpibooru.org/pages/api)
