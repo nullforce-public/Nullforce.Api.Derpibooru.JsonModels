@@ -4,10 +4,11 @@ A C# wrapper for Derpibooru JSON models
 
 |||
 ----------------------|---
-**Build**             | ![Build Status](https://github.com/nullforce-public/Nullforce.Api.Derpibooru.JsonModels/workflows/Nullforce.Api.Derpibooru.JsonModels%20Build/badge.svg?branch=main)
+**Build**             | [![Build Status](https://github.com/nullforce-public/Nullforce.Api.Derpibooru.JsonModels/workflows/build/badge.svg?branch=main)](https://github.com/nullforce-public/Nullforce.Api.Derpibooru.JsonModels/actions)
 **NuGet**             | [![nuget](https://img.shields.io/nuget/v/Nullforce.Api.Derpibooru.JsonModels.svg)](https://www.nuget.org/packages/Nullforce.Api.Derpibooru.JsonModels/)
 **NuGet (prerelease)**| [![nuget](https://img.shields.io/nuget/vpre/Nullforce.Api.Derpibooru.JsonModels.svg)](https://www.nuget.org/packages/Nullforce.Api.Derpibooru.JsonModels/)
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/nullforce-public/Nullforce.Api.Derpibooru.JsonModels/Commit?label=Nullforce.Api.Derpibooru.JsonModels%20Build&logo=github)
 
 ## Usage Example
 
