@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nullforce.Api.Derpibooru.JsonModels", "src\Nullforce.Api.Derpibooru.JsonModels.csproj", "{E589723A-CA82-4B48-9049-3135C3859F91}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{2EAAEB07-0805-456A-BBEF-68E1AEA4E2C7}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nullforce.Api.Derpibooru.JsonModels.Tests", "tests\Nullforce.Api.Derpibooru.JsonModel.Tests\Nullforce.Api.Derpibooru.JsonModels.Tests.csproj", "{04539D26-C3CE-4310-8B7A-B86F837DBD52}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{60E362BE-BD2E-4788-93EC-239C3DDF4FF6}"
