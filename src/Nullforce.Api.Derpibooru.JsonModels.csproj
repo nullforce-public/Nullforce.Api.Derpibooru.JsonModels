@@ -11,6 +11,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>derpibooru</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
   </PropertyGroup>
 
   <ItemGroup>
