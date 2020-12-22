@@ -55,4 +55,4 @@ jobs:
         if: github.event_name == 'pull_request' || startsWith(github.ref, 'refs/heads/main') || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/githubActions')
         env:
           NUGET_APIKEY: ${{ secrets.NUGET_KEY_NULLFORCE_API }}
-        run: dotnet nuget push publish/*.nupkg --api-key $NUGET_APIKEY
+        run: dotnet nuget push publish/*.nupkg --api-key $NUGET_APIKEY --source https://api.nuget.org/v3/index.json
