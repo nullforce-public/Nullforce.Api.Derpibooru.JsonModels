@@ -5,10 +5,12 @@ on:
   push:
     paths:
       - '.github/**'
+      - 'GitVersion.yml'
       - 'src/**'
   pull_request:
     paths:
       - '.github/**'
+      - 'GitVersion.yml'
       - 'src/**'
 
 env:
