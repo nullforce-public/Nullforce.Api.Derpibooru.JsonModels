@@ -26,4 +26,14 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: dotnet test
-        run: dotnet test --no-restore
+        run: dotnet test --configuration Release --no-restore --no-build
+
+      # Create artifacts
+      - name: dotnet pack
+        run: dotnet pack --configuration Release --no-restore --no-build --output publish
+
+      - name: Publish GitHub Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: nuget
+          path: publish/*.nupkg
