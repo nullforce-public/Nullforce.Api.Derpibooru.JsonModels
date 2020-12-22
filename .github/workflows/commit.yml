@@ -1,4 +1,4 @@
-name: On Commit
+name: Commit
 
 # Run this workflow every time a new commit pushed to your repository
 on: push
@@ -37,3 +37,7 @@ jobs:
         with:
           name: nuget
           path: publish/*.nupkg
+
+      # Publish NuGet packages
+      - name: Publish NuGet Package to GitHub Packages
+        run: dotnet nuget push publish/*.nupkg --api-key ${{secrets.GITHUB_TOKEN}} --source https://nuget.pkg.github.com/$GITHUB_ACTOR/index.json
