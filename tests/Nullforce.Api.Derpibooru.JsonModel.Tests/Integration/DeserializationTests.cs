@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using FluentAssertions;
+using FluentAssertions.Execution;
 using Flurl;
 using Flurl.Http;
 using Xunit;
@@ -39,6 +40,8 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
                 comment = commentRoot.Comment;
             };
 
+            using var _ = new AssertionScope();
+
             act.Should().NotThrow();
             commentRoot.Should().NotBeNull();
 
@@ -70,6 +73,8 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
                 gallery = gallerySearchRoot.Galleries.First();
             };
 
+            using var _ = new AssertionScope();
+
             act.Should().NotThrow();
             gallerySearchRoot.Should().NotBeNull();
 
@@ -98,6 +103,8 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
                 image = imageRoot.Image;
             };
 
+            using var _ = new AssertionScope();
+
             act.Should().NotThrow();
             imageRoot.Should().NotBeNull();
 
@@ -112,7 +119,7 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
             image.Duration.Should().Be(0.04);
             image.FaveCount.Should().BeGreaterOrEqualTo(1408);
             image.FirstSeenAt.Should().Be(DateTime.Parse("2017-03-11T20:32:14"));
-            image.Format.Should().Be("PNG");
+            image.Format.Should().Be("png");
             image.HasGeneratedThumbnails.Should().BeTrue();
             image.Height.Should().Be(1845);
             image.HiddenFromUsers.Should().BeFalse();
@@ -129,11 +136,11 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
             image.TagCount.Should().Be(image.TagIds.Length);
             image.TagIds.Should().HaveCount(image.TagCount);
             image.Tags.Should().HaveCount(image.TagCount);
-            image.UpdatedAt.Should().Be(DateTime.Parse("2020-07-02 11:33:07"));
+            image.UpdatedAt.Should().BeAfter(DateTime.Parse("2020-07-02 11:33:07"));
             image.Uploader.Should().BeNull();
             image.UploaderId.Should().BeNull();
             image.UpvoteCount.Should().Be(image.Score + image.DownvoteCount);
-            image.ViewUri.Should().Be("https://derpicdn.net/img/view/2017/3/11/1384692__safe_artist-colon-yakovlev-dash-vad_fluttershy_pegasus_pony_-colon-3_-colon-t_bed_behaving+like+a+cat_box_cheek+fluff_chest+fluff_colored+sketch_cute_d.png");
+            image.ViewUri.Should().Match("https://derpicdn.net/img/view/2017/3/11/1384692__safe_artist-colon-yakovlev-dash-vad_fluttershy_*.png");
             image.Width.Should().Be(1400);
             image.WilsonScore.Should().BeGreaterThan(0);
 
@@ -166,6 +173,8 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
                 var json = await uri.GetStringAsync();
                 oembed = JsonSerializer.Deserialize<OembedJson>(json);
             };
+
+            using var _ = new AssertionScope();
 
             act.Should().NotThrow();
             oembed.Should().NotBeNull();
@@ -200,6 +209,8 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
                 post = postsRoot.Posts.First();
             };
 
+            using var _ = new AssertionScope();
+
             act.Should().NotThrow();
             postsRoot.Should().NotBeNull();
 
@@ -229,6 +240,8 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
                 profileRoot = JsonSerializer.Deserialize<ProfileRootJson>(json);
                 user = profileRoot.User;
             };
+
+            using var _ = new AssertionScope();
 
             act.Should().NotThrow();
             profileRoot.Should().NotBeNull();
@@ -274,6 +287,8 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
                 tagsRoot = JsonSerializer.Deserialize<TagSearchRootJson>(json);
                 tag = tagsRoot.Tags.First();
             };
+
+            using var _ = new AssertionScope();
 
             act.Should().NotThrow();
             tagsRoot.Should().NotBeNull();
