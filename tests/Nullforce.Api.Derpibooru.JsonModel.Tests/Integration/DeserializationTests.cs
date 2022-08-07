@@ -15,12 +15,12 @@ namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration
 
         public DeserializationTests()
         {
-            // Do this in Startup. All calls to SimpleCast will use the same HttpClient instance.
+            // Do this in Startup. All calls to the _baseUri will use the same HttpClient instance.
             FlurlHttp.ConfigureClient(_baseUri, cli => cli
                 .WithHeaders(new
                 {
                     Accept = "application/json",
-                    User_Agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" // Flurl will convert that underscore to a hyphen
+                    User_Agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"
                 }));
         }
 
