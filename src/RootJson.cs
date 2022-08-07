@@ -19,7 +19,7 @@ namespace Nullforce.Api.Derpibooru.JsonModels
 
     public class ForumsRootJson
     {
-        [JsonPropertyName("forunms")]
+        [JsonPropertyName("forums")]
         public ForumJson[] Forums { get; set; }
 
         [JsonPropertyName("total")]
