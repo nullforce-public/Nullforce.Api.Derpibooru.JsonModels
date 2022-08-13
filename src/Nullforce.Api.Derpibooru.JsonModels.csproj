@@ -2,11 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>0.1.0</Version>
     <Authors>Nullforce</Authors>
     <Description>A C# wrapper for Derpibooru JSON models</Description>
-    <Copyright>Copyright 2019-2020 nullforce</Copyright>
+    <Copyright>Copyright 2019-2022 nullforce</Copyright>
     <RepositoryUrl>https://github.com/nullforce-public/Nullforce.Api.Derpibooru.JsonModels</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>derpibooru</PackageTags>

@@ -1,37 +1,36 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Nullforce.Api.Derpibooru.JsonModels
+namespace Nullforce.Api.Derpibooru.JsonModels;
+
+public class ForumJson
 {
-    public class ForumJson
-    {
-        /// <summary>
-        /// The forum's description.
-        /// </summary>
-        [JsonPropertyName("description")]
-        public string Description { get; set; }
+    /// <summary>
+    /// The forum's description.
+    /// </summary>
+    [JsonPropertyName("description")]
+    public string Description { get; set; }
 
-        /// <summary>
-        /// The forum's name.
-        /// </summary>
-        [JsonPropertyName("name")]
-        public string Name { get; set; }
+    /// <summary>
+    /// The forum's name.
+    /// </summary>
+    [JsonPropertyName("name")]
+    public string Name { get; set; }
 
-        /// <summary>
-        /// The amount of posts in the forum.
-        /// </summary>
-        [JsonPropertyName("post_count")]
-        public int PostCount { get; set; }
+    /// <summary>
+    /// The amount of posts in the forum.
+    /// </summary>
+    [JsonPropertyName("post_count")]
+    public int PostCount { get; set; }
 
-        /// <summary>
-        /// The forum's short name (used to identify it).
-        /// </summary>
-        [JsonPropertyName("short_name")]
-        public string ShortName { get; set; }
+    /// <summary>
+    /// The forum's short name (used to identify it).
+    /// </summary>
+    [JsonPropertyName("short_name")]
+    public string ShortName { get; set; }
 
-        /// <summary>
-        /// The amount of topics in the forum.
-        /// </summary>
-        [JsonPropertyName("topic_count")]
-        public int TopicCount { get; set; }
-    }
+    /// <summary>
+    /// The amount of topics in the forum.
+    /// </summary>
+    [JsonPropertyName("topic_count")]
+    public int TopicCount { get; set; }
 }
