@@ -14,7 +14,7 @@
     <RepositoryUrl>https://github.com/nullforce-public/Nullforce.Api.Derpibooru.JsonModels</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageTags>derpibooru</PackageTags>
+    <PackageTags>derpibooru philomena twibooru</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
