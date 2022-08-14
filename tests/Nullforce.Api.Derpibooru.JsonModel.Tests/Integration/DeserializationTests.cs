@@ -44,6 +44,7 @@ public class DeserializationTests
 
         await act.Should().NotThrowAsync();
         commentRoot.Should().NotBeNull();
+        commentRoot.JsonExtensionData.Should().BeNull();
 
         // Property validation
         comment.JsonExtensionData.Should().BeNull();
@@ -78,6 +79,7 @@ public class DeserializationTests
 
         await act.Should().NotThrowAsync();
         gallerySearchRoot.Should().NotBeNull();
+        gallerySearchRoot.JsonExtensionData.Should().BeNull();
 
         // Property validation
         gallery.JsonExtensionData.Should().BeNull();
@@ -109,6 +111,7 @@ public class DeserializationTests
 
         await act.Should().NotThrowAsync();
         imageRoot.Should().NotBeNull();
+        imageRoot.JsonExtensionData.Should().BeNull();
 
         // Property validation
         image.JsonExtensionData.Should().BeNull();
@@ -184,6 +187,7 @@ public class DeserializationTests
 
         await act.Should().NotThrowAsync();
         oembed.Should().NotBeNull();
+        oembed.JsonExtensionData.Should().BeNull();
 
         // Property validation
         oembed.JsonExtensionData.Should().BeNull();
@@ -220,6 +224,7 @@ public class DeserializationTests
 
         await act.Should().NotThrowAsync();
         postsRoot.Should().NotBeNull();
+        postsRoot.JsonExtensionData.Should().BeNull();
 
         // Property validation
         post.JsonExtensionData.Should().BeNull();
@@ -253,6 +258,7 @@ public class DeserializationTests
 
         await act.Should().NotThrowAsync();
         profileRoot.Should().NotBeNull();
+        profileRoot.JsonExtensionData.Should().BeNull();
 
         // Property validation
         user.JsonExtensionData.Should().BeNull();
@@ -303,6 +309,7 @@ public class DeserializationTests
 
         await act.Should().NotThrowAsync();
         tagsRoot.Should().NotBeNull();
+        tagsRoot.JsonExtensionData.Should().BeNull();
 
         // Property validation
         tag.JsonExtensionData.Should().BeNull();
