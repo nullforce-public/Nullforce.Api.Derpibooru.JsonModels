@@ -1,4 +1,4 @@
-namespace Nullforce.Api.Derpibooru.JsonModels;
+namespace Nullforce.Api.JsonModels;
 
 public abstract class JsonBase
 {

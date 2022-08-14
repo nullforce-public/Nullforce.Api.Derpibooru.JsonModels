@@ -1,20 +1,13 @@
 using System;
 using System.Linq;
-using System.Text.Json;
-using System.Threading.Tasks;
-using FluentAssertions;
-using FluentAssertions.Execution;
-using Flurl;
-using Flurl.Http;
-using Xunit;
 
-namespace Nullforce.Api.Derpibooru.JsonModels.Tests.Integration;
+namespace Nullforce.Api.JsonModels.Philomena.Tests.Integration;
 
-public class DeserializationTests
+public class PhilomenaTests
 {
     private readonly string _baseUri = "https://derpibooru.org/api/v1/json";
 
-    public DeserializationTests()
+    public PhilomenaTests()
     {
         // Do this in Startup. All calls to the _baseUri will use the same HttpClient instance.
         FlurlHttp.ConfigureClient(_baseUri, cli => cli
