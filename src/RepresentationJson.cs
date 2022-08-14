@@ -1,8 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿namespace Nullforce.Api.Derpibooru.JsonModels;
 
-namespace Nullforce.Api.Derpibooru.JsonModels;
-
-public class RepresentationsJson
+public class RepresentationsJson : JsonBase
 {
     [JsonPropertyName("full")]
     public string Full { get; set; }

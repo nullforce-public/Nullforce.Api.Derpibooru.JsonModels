@@ -1,9 +1,6 @@
-﻿using System;
-using System.Text.Json.Serialization;
+﻿namespace Nullforce.Api.Derpibooru.JsonModels;
 
-namespace Nullforce.Api.Derpibooru.JsonModels;
-
-public class TopicJson
+public class TopicJson : JsonBase
 {
     /// <summary>
     /// The name of the user who made the topic.

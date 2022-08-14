@@ -1,9 +1,6 @@
-﻿using System;
-using System.Text.Json.Serialization;
+﻿namespace Nullforce.Api.Derpibooru.JsonModels;
 
-namespace Nullforce.Api.Derpibooru.JsonModels;
-
-public class CommentJson
+public class CommentJson : JsonBase
 {
     /// <summary>
     /// The comment's ID.

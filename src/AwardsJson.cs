@@ -1,9 +1,6 @@
-﻿using System;
-using System.Text.Json.Serialization;
+﻿namespace Nullforce.Api.Derpibooru.JsonModels;
 
-namespace Nullforce.Api.Derpibooru.JsonModels;
-
-public class AwardsJson
+public class AwardsJson : JsonBase
 {
     /// <summary>
     /// The ID of the badge this award is derived from.

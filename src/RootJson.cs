@@ -1,8 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿namespace Nullforce.Api.Derpibooru.JsonModels;
 
-namespace Nullforce.Api.Derpibooru.JsonModels;
-
-public class CommentRootJson
+public class CommentRootJson : JsonBase
 {
     [JsonPropertyName("comment")]
     public CommentJson Comment { get; set; }

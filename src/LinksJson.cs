@@ -1,9 +1,6 @@
-﻿using System;
-using System.Text.Json.Serialization;
+﻿namespace Nullforce.Api.Derpibooru.JsonModels;
 
-namespace Nullforce.Api.Derpibooru.JsonModels;
-
-public class LinksJson
+public class LinksJson : JsonBase
 {
     /// <summary>
     /// The creation time, in UTC, of this link.

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Text.Json.Serialization;
+﻿namespace Nullforce.Api.Derpibooru.JsonModels;
 
-namespace Nullforce.Api.Derpibooru.JsonModels;
-
-public class ImageJson
+public class ImageJson : JsonBase
 {
     /// <summary>
     /// The image's ID.
@@ -142,6 +139,12 @@ public class ImageJson
     /// </summary>
     [JsonPropertyName("sha512_hash")]
     public string SHA512Hash { get; set; }
+
+    /// <summary>
+    /// The number of bytes the image's file contains.
+    /// </summary>
+    [JsonPropertyName("size")]
+    public long Size { get; set; }
 
     /// <summary>
     /// The current source URL of the image.

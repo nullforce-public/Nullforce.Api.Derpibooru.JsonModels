@@ -1,8 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿namespace Nullforce.Api.Derpibooru.JsonModels;
 
-namespace Nullforce.Api.Derpibooru.JsonModels;
-
-public class OembedJson
+public class OembedJson : JsonBase
 {
     /// <summary>
     /// The comma-delimited names of the image authors.

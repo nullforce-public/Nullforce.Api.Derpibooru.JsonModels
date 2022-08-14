@@ -1,14 +1,12 @@
-﻿using System.Text.Json.Serialization;
-
-namespace Nullforce.Api.Derpibooru.JsonModels;
+﻿namespace Nullforce.Api.Derpibooru.JsonModels;
 
 /// <summary>
 /// The interactions of the user specified by the API key given.
-/// Known interation types:
+/// Known interaction types:
 ///   - faved: null
 ///   - voted: up, down
 /// </summary>
-public class InteractionJson
+public class InteractionJson : JsonBase
 {
     public int Id { get; set; }
     [JsonPropertyName("interaction_type")]

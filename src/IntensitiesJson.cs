@@ -1,8 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿namespace Nullforce.Api.Derpibooru.JsonModels;
 
-namespace Nullforce.Api.Derpibooru.JsonModels;
-
-public class IntensitiesJson
+public class IntensitiesJson : JsonBase
 {
     [JsonPropertyName("ne")]
     public double NE { get; set; }

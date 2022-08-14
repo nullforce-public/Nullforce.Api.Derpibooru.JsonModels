@@ -1,8 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿namespace Nullforce.Api.Derpibooru.JsonModels;
 
-namespace Nullforce.Api.Derpibooru.JsonModels;
-
-public class GalleryJson
+public class GalleryJson : JsonBase
 {
     /// <summary>
     /// The gallery's ID.

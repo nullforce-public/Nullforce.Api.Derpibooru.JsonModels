@@ -1,8 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿namespace Nullforce.Api.Derpibooru.JsonModels;
 
-namespace Nullforce.Api.Derpibooru.JsonModels;
-
-public class FilterJson
+public class FilterJson : JsonBase
 {
     /// <summary>
     /// The id of the filter.
