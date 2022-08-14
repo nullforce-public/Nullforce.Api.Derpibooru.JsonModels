@@ -26,7 +26,7 @@ public class DeserializationTests
     }
 
     [Fact]
-    public void CommentRoot_GetJson_SuccessWithoutExceptions()
+    public async void CommentRoot_GetJson_SuccessWithoutExceptions()
     {
         // https://derpibooru.org/api/v1/json/comments/7093003
         var uri = _baseUri.AppendPathSegment("/comments/7093003");
@@ -42,7 +42,7 @@ public class DeserializationTests
 
         using var _ = new AssertionScope();
 
-        act.Should().NotThrow();
+        await act.Should().NotThrowAsync();
         commentRoot.Should().NotBeNull();
 
         // Property validation
@@ -60,7 +60,7 @@ public class DeserializationTests
     }
 
     [Fact]
-    public void GallerySearchRoot_GetJson_SuccessWithoutExceptions()
+    public async void GallerySearchRoot_GetJson_SuccessWithoutExceptions()
     {
         // https://derpibooru.org/api/v1/json/search/galleries?q=title:fluttershy
         var uri = _baseUri.AppendPathSegment("/search/galleries").SetQueryParam("q", "id:11972");
@@ -76,7 +76,7 @@ public class DeserializationTests
 
         using var _ = new AssertionScope();
 
-        act.Should().NotThrow();
+        await act.Should().NotThrowAsync();
         gallerySearchRoot.Should().NotBeNull();
 
         // Property validation
@@ -91,7 +91,7 @@ public class DeserializationTests
     }
 
     [Fact]
-    public void ImageRoot_GetJson_SuccessWithoutExceptions()
+    public async void ImageRoot_GetJson_SuccessWithoutExceptions()
     {
         // https://derpibooru.org/api/v1/json/images/1384692
         var uri = _baseUri.AppendPathSegment("/images/1384692");
@@ -107,7 +107,7 @@ public class DeserializationTests
 
         using var _ = new AssertionScope();
 
-        act.Should().NotThrow();
+        await act.Should().NotThrowAsync();
         imageRoot.Should().NotBeNull();
 
         // Property validation
@@ -167,7 +167,7 @@ public class DeserializationTests
     }
 
     [Fact]
-    public void Oembed_GetJson_SuccessWithoutExceptions()
+    public async void Oembed_GetJson_SuccessWithoutExceptions()
     {
         // https://derpibooru.org/api/v1/json/oembed?url=https://derpicdn.net/img/view/2017/3/11/1384692.png
         var uri = _baseUri.AppendPathSegment("/oembed").SetQueryParam("url", "https://derpicdn.net/img/view/2017/3/11/1384692.png");
@@ -181,7 +181,7 @@ public class DeserializationTests
 
         using var _ = new AssertionScope();
 
-        act.Should().NotThrow();
+        await act.Should().NotThrowAsync();
         oembed.Should().NotBeNull();
 
         // Property validation
@@ -201,7 +201,7 @@ public class DeserializationTests
     }
 
     [Fact]
-    public void PostsSearchRoot_GetJson_SuccessWithoutExceptions()
+    public async void PostsSearchRoot_GetJson_SuccessWithoutExceptions()
     {
         // https://derpibooru.org/api/v1/json/search/posts?q=id:4236623
         var uri = _baseUri.AppendPathSegment("/search/posts").SetQueryParam("q", "id:4236623");
@@ -217,7 +217,7 @@ public class DeserializationTests
 
         using var _ = new AssertionScope();
 
-        act.Should().NotThrow();
+        await act.Should().NotThrowAsync();
         postsRoot.Should().NotBeNull();
 
         // Property validation
@@ -234,7 +234,7 @@ public class DeserializationTests
     }
 
     [Fact]
-    public void ProfileRootJson_GetJson_SuccessWithoutExceptions()
+    public async void ProfileRootJson_GetJson_SuccessWithoutExceptions()
     {
         // https://derpibooru.org/api/v1/json/profiles/216494
         var uri = _baseUri.AppendPathSegment("profiles/216494");
@@ -250,7 +250,7 @@ public class DeserializationTests
 
         using var _ = new AssertionScope();
 
-        act.Should().NotThrow();
+        await act.Should().NotThrowAsync();
         profileRoot.Should().NotBeNull();
 
         // Property validation
@@ -284,7 +284,7 @@ public class DeserializationTests
     }
 
     [Fact]
-    public void TagSearchRoot_GetJson_SuccessWithoutExceptions()
+    public async void TagSearchRoot_GetJson_SuccessWithoutExceptions()
     {
         // https://derpibooru.org/api/v1/json/search/tags?q=id:27724
         var uri = _baseUri.AppendPathSegment("/search/tags").SetQueryParam("q", "id:27724");
@@ -300,7 +300,7 @@ public class DeserializationTests
 
         using var _ = new AssertionScope();
 
-        act.Should().NotThrow();
+        await act.Should().NotThrowAsync();
         tagsRoot.Should().NotBeNull();
 
         // Property validation
