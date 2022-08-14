@@ -1,4 +1,4 @@
-﻿namespace Nullforce.Api.Derpibooru.JsonModels;
+﻿namespace Nullforce.Api.JsonModels.Philomena;
 
 /// <summary>
 /// The interactions of the user specified by the API key given.

@@ -1,4 +1,4 @@
-﻿namespace Nullforce.Api.Derpibooru.JsonModels;
+﻿namespace Nullforce.Api.JsonModels.Philomena;
 
 public class OembedJson : JsonBase
 {
