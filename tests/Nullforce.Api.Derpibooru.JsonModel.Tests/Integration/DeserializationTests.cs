@@ -135,6 +135,7 @@ public class DeserializationTests
         image.OriginalSHA512Hash.Should().Be("a5b68e1cb435a818cc15d5a4e8f879d350700ae1dbe9d12b7d9e421abc6d2f6b622318d99d0e5b120c2c59b3df3b9b120e065a507142f48525935cbfd836588d");
         image.Score.Should().Be(image.UpvoteCount - image.DownvoteCount);
         image.SHA512Hash.Should().Be("a5b68e1cb435a818cc15d5a4e8f879d350700ae1dbe9d12b7d9e421abc6d2f6b622318d99d0e5b120c2c59b3df3b9b120e065a507142f48525935cbfd836588d");
+        image.Size.Should().Be(1305509);
         image.SourceUri.Should().Be("http://yakovlev-vad.deviantart.com/art/Favorite-place-Color-Sketch-668408843");
         image.TagCount.Should().Be(image.TagIds.Length);
         image.TagIds.Should().HaveCount(image.TagCount);
