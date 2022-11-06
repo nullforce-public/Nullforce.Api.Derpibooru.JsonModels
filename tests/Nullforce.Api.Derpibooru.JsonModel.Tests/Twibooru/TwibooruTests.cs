@@ -20,8 +20,8 @@ public class TwibooruTests
     [Fact]
     public async void PostRoot_GetJson_SuccessWithoutExceptions()
     {
-        // https://twibooru.org/api/v3/posts/1
-        var uri = _baseUri.AppendPathSegment("/posts/1");
+        // https://twibooru.org/api/v3/posts/3
+        var uri = _baseUri.AppendPathSegment("/posts/3");
         PostResponseJson root = null;
         PostJson post = null;
 
@@ -40,9 +40,10 @@ public class TwibooruTests
 
         // Property validation
         post.JsonExtensionData.Should().BeNull();
+        post.MediaType.Should().Be("image");
 
         post.Intensities.JsonExtensionData.Should().BeNull();
-
+        post.Locations[0].JsonExtensionData.Should().BeNull();
         post.Representations.JsonExtensionData.Should().BeNull();
     }
 
@@ -69,11 +70,7 @@ public class TwibooruTests
 
         // Property validation
         post.JsonExtensionData.Should().BeNull();
-
         post.Intensities.JsonExtensionData.Should().BeNull();
-
-        post.Locations[0].JsonExtensionData.Should().BeNull();
-
         post.Representations.JsonExtensionData.Should().BeNull();
     }
 
@@ -105,9 +102,9 @@ public class TwibooruTests
     [Fact]
     public async void SearchPostsRoot_GetJson_SuccessWithoutExceptions()
     {
-        // https://twibooru.org/api/v3/search/posts?q=safe
+        // https://twibooru.org/api/v3/search/posts?q=id:3
         var uri = _baseUri.AppendPathSegment("/search/posts");
-        uri.SetQueryParam("q", "safe");
+        uri.SetQueryParam("q", "id:3");
         SearchPostsResponseJson root = null;
         PostJson[] posts = null;
 
