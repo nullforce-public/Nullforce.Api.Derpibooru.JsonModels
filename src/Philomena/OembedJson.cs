@@ -45,6 +45,12 @@ public class OembedJson : JsonBase
     public string[] DerpibooruTags { get; set; }
 
     /// <summary>
+    /// The height of the image in pixels.
+    /// </summary>
+    [JsonPropertyName("height")]
+    public long Height { get; set; }
+
+    /// <summary>
     /// Always "Derpibooru".
     /// </summary>
     [JsonPropertyName("provider_name")]
@@ -55,6 +61,24 @@ public class OembedJson : JsonBase
     /// </summary>
     [JsonPropertyName("provider_url")]
     public string ProviderUri { get; set; }
+
+    /// <summary>
+    /// The height of the image's thumbnail in pixels.
+    /// </summary>
+    [JsonPropertyName("thumbnail_height")]
+    public long ThumbnailHeight { get; set; }
+
+    /// <summary>
+    /// The URL of the image's thumbnail.
+    /// </summary>
+    [JsonPropertyName("thumbnail_url")]
+    public string ThumbnailUri { get; set; }
+
+    /// <summary>
+    /// The width of the image's thumbnail in pixels.
+    /// </summary>
+    [JsonPropertyName("thumbnail_width")]
+    public long ThumbnailWidth { get; set; }
 
     /// <summary>
     /// The image's ID and associated tags, as would be given on the title of the image page.
@@ -69,8 +93,20 @@ public class OembedJson : JsonBase
     public string Type { get; set; }
 
     /// <summary>
+    /// The URL of the image.
+    /// </summary>
+    [JsonPropertyName("url")]
+    public string Uri { get; set; }
+
+    /// <summary>
     /// Always "1.0".
     /// </summary>
     [JsonPropertyName("version")]
     public string Version { get; set; }
+
+    /// <summary>
+    /// The width of the image in pixels.
+    /// </summary>
+    [JsonPropertyName("width")]
+    public long Width { get; set; }
 }

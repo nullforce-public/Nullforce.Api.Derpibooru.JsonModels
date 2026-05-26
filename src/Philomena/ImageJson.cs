@@ -117,6 +117,12 @@ public class ImageJson : JsonBase
     public string OriginalSHA512Hash { get; set; }
 
     /// <summary>
+    /// The number of bytes the original image's file contains.
+    /// </summary>
+    [JsonPropertyName("orig_size")]
+    public long OriginalSize { get; set; }
+
+    /// <summary>
     /// Whether the image has finished optimization.
     /// </summary>
     [JsonPropertyName("processed")]
@@ -147,10 +153,17 @@ public class ImageJson : JsonBase
     public long Size { get; set; }
 
     /// <summary>
-    /// The current source URL of the image.
+    /// (Deprecated - Use source_urls field instead) Provides the first source URL of the image as stored in the database, intended for legacy applications only.
     /// </summary>
+    [Obsolete("Use SourceUris property instead", false)]
     [JsonPropertyName("source_url")]
     public string SourceUri { get; set; }
+
+    /// <summary>
+    /// A list of all source URLs provided for the image, may be empty.
+    /// </summary>
+    [JsonPropertyName("source_urls")]
+    public string[] SourceUris { get; set; }
 
     /// <summary>
     /// Whether this image is hit by the current filter.

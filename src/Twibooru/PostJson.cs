@@ -41,6 +41,9 @@ public class PostJson : JsonBase
     [JsonPropertyName("source_url")]
     public string SourceUrl { get; set; }
 
+    [JsonPropertyName("source_urls")]
+    public string[] SourceUrls { get; set; }
+
     [JsonPropertyName("tag_ids")]
     public int[] TagIds { get; set; }
 

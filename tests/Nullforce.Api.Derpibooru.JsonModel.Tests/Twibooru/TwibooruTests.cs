@@ -18,7 +18,7 @@ public class TwibooruTests
     }
 
     [Fact]
-    public async void PostRoot_GetJson_SuccessWithoutExceptions()
+    public async Task PostRoot_GetJson_SuccessWithoutExceptions()
     {
         // https://twibooru.org/api/v3/posts/3
         var uri = _baseUri.AppendPathSegment("/posts/3");
@@ -32,23 +32,24 @@ public class TwibooruTests
             post = root.Post;
         };
 
-        using var _ = new AssertionScope();
+        using (new AssertionScope())
+        {
+            await act.Should().NotThrowAsync();
+            root.Should().NotBeNull();
+            root.JsonExtensionData.Should().BeNull();
 
-        await act.Should().NotThrowAsync();
-        root.Should().NotBeNull();
-        root.JsonExtensionData.Should().BeNull();
+            // Property validation
+            post.JsonExtensionData.Should().BeNull();
+            post.MediaType.Should().Be("image");
 
-        // Property validation
-        post.JsonExtensionData.Should().BeNull();
-        post.MediaType.Should().Be("image");
-
-        post.Intensities.JsonExtensionData.Should().BeNull();
-        post.Locations[0].JsonExtensionData.Should().BeNull();
-        post.Representations.JsonExtensionData.Should().BeNull();
+            post.Intensities.JsonExtensionData.Should().BeNull();
+            post.Locations[0].JsonExtensionData.Should().BeNull();
+            post.Representations.JsonExtensionData.Should().BeNull();
+        }
     }
 
     [Fact]
-    public async void FeaturedPostRoot_GetJson_SuccessWithoutExceptions()
+    public async Task FeaturedPostRoot_GetJson_SuccessWithoutExceptions()
     {
         // https://twibooru.org/api/v3/posts/featured
         var uri = _baseUri.AppendPathSegment("/posts/featured");
@@ -62,20 +63,21 @@ public class TwibooruTests
             post = root.Post;
         };
 
-        using var _ = new AssertionScope();
+        using (new AssertionScope())
+        {
+            await act.Should().NotThrowAsync();
+            root.Should().NotBeNull();
+            root.JsonExtensionData.Should().BeNull();
 
-        await act.Should().NotThrowAsync();
-        root.Should().NotBeNull();
-        root.JsonExtensionData.Should().BeNull();
-
-        // Property validation
-        post.JsonExtensionData.Should().BeNull();
-        post.Intensities.JsonExtensionData.Should().BeNull();
-        post.Representations.JsonExtensionData.Should().BeNull();
+            // Property validation
+            post.JsonExtensionData.Should().BeNull();
+            post.Intensities.JsonExtensionData.Should().BeNull();
+            post.Representations.JsonExtensionData.Should().BeNull();
+        }
     }
 
     [Fact]
-    public async void PostCommentsRoot_GetJson_SuccessWithoutExceptions()
+    public async Task PostCommentsRoot_GetJson_SuccessWithoutExceptions()
     {
         // https://twibooru.org/api/v3/posts/1/comments
         var uri = _baseUri.AppendPathSegment("/posts/1/comments");
@@ -89,18 +91,19 @@ public class TwibooruTests
             comments = root.Comments;
         };
 
-        using var _ = new AssertionScope();
+        using (new AssertionScope())
+        {
+            await act.Should().NotThrowAsync();
+            root.Should().NotBeNull();
+            root.JsonExtensionData.Should().BeNull();
 
-        await act.Should().NotThrowAsync();
-        root.Should().NotBeNull();
-        root.JsonExtensionData.Should().BeNull();
-
-        // Property validation
-        comments[0].JsonExtensionData.Should().BeNull();
+            // Property validation
+            comments[0].JsonExtensionData.Should().BeNull();
+        }
     }
 
     [Fact]
-    public async void SearchPostsRoot_GetJson_SuccessWithoutExceptions()
+    public async Task SearchPostsRoot_GetJson_SuccessWithoutExceptions()
     {
         // https://twibooru.org/api/v3/search/posts?q=id:3
         var uri = _baseUri.AppendPathSegment("/search/posts");
@@ -115,18 +118,19 @@ public class TwibooruTests
             posts = root.Posts;
         };
 
-        using var _ = new AssertionScope();
+        using (new AssertionScope())
+        {
+            await act.Should().NotThrowAsync();
+            root.Should().NotBeNull();
+            root.JsonExtensionData.Should().BeNull();
 
-        await act.Should().NotThrowAsync();
-        root.Should().NotBeNull();
-        root.JsonExtensionData.Should().BeNull();
-
-        // Property validation
-        posts[0].JsonExtensionData.Should().BeNull();
+            // Property validation
+            posts[0].JsonExtensionData.Should().BeNull();
+        }
     }
 
     [Fact]
-    public async void SearchTagsRoot_GetJson_SuccessWithoutExceptions()
+    public async Task SearchTagsRoot_GetJson_SuccessWithoutExceptions()
     {
         // https://twibooru.org/api/v3/search/tags?q=fluttershy
         var uri = _baseUri.AppendPathSegment("/search/tags");
@@ -141,13 +145,14 @@ public class TwibooruTests
             tags = root.Tags;
         };
 
-        using var _ = new AssertionScope();
+        using (new AssertionScope())
+        {
+            await act.Should().NotThrowAsync();
+            root.Should().NotBeNull();
+            root.JsonExtensionData.Should().BeNull();
 
-        await act.Should().NotThrowAsync();
-        root.Should().NotBeNull();
-        root.JsonExtensionData.Should().BeNull();
-
-        // Property validation
-        tags[0].JsonExtensionData.Should().BeNull();
+            // Property validation
+            tags[0].JsonExtensionData.Should().BeNull();
+        }
     }
 }

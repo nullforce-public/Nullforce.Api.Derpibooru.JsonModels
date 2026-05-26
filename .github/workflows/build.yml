@@ -49,7 +49,7 @@ jobs:
         run: dotnet pack --configuration Release --no-restore --no-build --output publish
 
       - name: Publish GitHub Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: nuget
           path: publish/*.nupkg
@@ -59,7 +59,7 @@ jobs:
     needs: build
     steps:
     - name: Get artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: nuget
     - name: Publish NuGet Package to GitHub Package
