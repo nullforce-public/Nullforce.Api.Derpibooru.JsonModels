@@ -2,19 +2,28 @@ using System;
 
 namespace Nullforce.Api.JsonModels.Twibooru.Tests.Integration;
 
-public class TwibooruTests
+public class TwibooruFixture
 {
-    private readonly string _baseUri = "https://twibooru.org/api/v3";
-
-    public TwibooruTests()
+    public TwibooruFixture()
     {
         // Do this in Startup. All calls to the _baseUri will use the same HttpClient instance.
-        FlurlHttp.ConfigureClient(_baseUri, cli => cli
+        FlurlHttp.ConfigureClientForUrl("https://twibooru.org/api/v3")
             .WithHeaders(new
             {
                 Accept = "application/json",
                 User_Agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"
-            }));
+            });
+    }
+}
+
+public class TwibooruTests : IClassFixture<TwibooruFixture>
+{
+    private readonly string _baseUri = "https://twibooru.org/api/v3";
+    private readonly TwibooruFixture _fixture;
+
+    public TwibooruTests(TwibooruFixture fixture)
+    {
+        _fixture = fixture;
     }
 
     [Fact]

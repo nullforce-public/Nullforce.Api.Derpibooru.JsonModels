@@ -3,19 +3,28 @@ using System.Linq;
 
 namespace Nullforce.Api.JsonModels.Philomena.Tests.Integration;
 
-public class PhilomenaTests
+public class PhilomenaFixture
 {
-    private readonly string _baseUri = "https://derpibooru.org/api/v1/json";
-
-    public PhilomenaTests()
+    public PhilomenaFixture()
     {
         // Do this in Startup. All calls to the _baseUri will use the same HttpClient instance.
-        FlurlHttp.ConfigureClient(_baseUri, cli => cli
+        FlurlHttp.ConfigureClientForUrl("https://derpibooru.org/api/v1/json")
             .WithHeaders(new
             {
                 Accept = "application/json",
                 User_Agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"
-            }));
+            });
+    }
+}
+
+public class PhilomenaTests : IClassFixture<PhilomenaFixture>
+{
+    private readonly string _baseUri = "https://derpibooru.org/api/v1/json";
+    private readonly PhilomenaFixture _fixture;
+
+    public PhilomenaTests(PhilomenaFixture fixture)
+    {
+        _fixture = fixture;
     }
 
     [Fact]
