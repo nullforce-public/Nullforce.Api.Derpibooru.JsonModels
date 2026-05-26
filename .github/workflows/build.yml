@@ -31,7 +31,7 @@ jobs:
     steps:
       # Checks out a copy of your repository on the ubuntu-latest machine
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -55,11 +55,12 @@ jobs:
           path: publish/*.nupkg
 
   publish-github-package:
+    if: github.ref_name == 'main' || startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     needs: build
     steps:
     - name: Get artifact
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: nuget
     - name: Publish NuGet Package to GitHub Package
@@ -71,7 +72,7 @@ jobs:
     needs: [build, publish-github-package]
     steps:
     - name: Get artifact
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: nuget
     - name: Publish NuGet Package to nuget.org
